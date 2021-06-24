@@ -9,12 +9,17 @@ import SwiftUI
 
 struct CircleImageView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image("bg")
+            .resizable()
+            .frame(width: 200, height: 200, alignment: .center)
+            .clipShape(Circle())
+            .overlay(Circle().stroke(Color.green, lineWidth: 3))
+            .shadow(radius: 7)
     }
 }
 
 struct CircleImageView_Previews: PreviewProvider {
     static var previews: some View {
-        CircleImageView()
+        CircleImageView().previewDevice("iPhone 11")
     }
 }
